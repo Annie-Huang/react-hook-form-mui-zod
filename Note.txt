@@ -1,0 +1,7 @@
+React Hook Form Course for Beginners (inc. Zod + Material UI)
+(https://www.youtube.com/watch?v=JyeWoqWsQFo)
+
+https://github.com/codegenixdev/react-hook-form-mui-zod-boilerplate
+https://github.com/Annie-Huang/react-hook-form-mui-zod
+
+--------------------------------------------------------------------------
