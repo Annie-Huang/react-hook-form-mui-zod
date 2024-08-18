@@ -1,7 +1,7 @@
-import React from 'react';
+import { useForm } from 'react-hook-form';
 
-const Users = () => {
-  return <div>users</div>;
+export const Users = () => {
+  const { register } = useForm<{ email: string }>();
+
+  return <input {...register('email')} placeholder='Email' />;
 };
-
-export default Users;

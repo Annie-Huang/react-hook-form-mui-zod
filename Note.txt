@@ -35,3 +35,23 @@ Note:
     - Need to install date-fns@3.2. Otherwise, it will note work with @mui/x-date-pickers @mui/x-date-pickers-pro
 
 PS C:\react\react-hook-form-mui-zod> npm install -D @hookform/devtools
+
+
+Traditional input field includes:
+    <input
+      type='text'
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      onBlur={}
+      name='userName'
+      ref
+      disabled={}
+      required={}
+      maxLength={}
+    />
+
+All above can be replaced by register.
+  register().max
+  register().ref
+  register().disabled
+  register().onBlur
