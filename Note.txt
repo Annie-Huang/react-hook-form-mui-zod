@@ -33,3 +33,5 @@ PS C:\react\react-hook-form-mui-zod> npm install @emotion/react @emotion/styled 
 Note:
     - In order to use zod with react-hook-form, we need to install @hookform/resolvers
     - Need to install date-fns@3.2. Otherwise, it will note work with @mui/x-date-pickers @mui/x-date-pickers-pro
+
+PS C:\react\react-hook-form-mui-zod> npm install -D @hookform/devtools
