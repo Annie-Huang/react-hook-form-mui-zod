@@ -5,3 +5,26 @@ https://github.com/codegenixdev/react-hook-form-mui-zod-boilerplate
 https://github.com/Annie-Huang/react-hook-form-mui-zod
 
 --------------------------------------------------------------------------
+PS C:\react\react-hook-form-mui-zod> npm create vite .
+Need to install the following packages:
+create-vite@5.5.2
+Ok to proceed? (y) y
+
+
+> npx
+> create-vite .
+
+√ Current directory is not empty. Please choose how to proceed: » Ignore files and continue
+√ Select a framework: » React
+√ Select a variant: » TypeScript + SWC
+
+Scaffolding project in C:\react\react-hook-form-mui-zod...
+
+Done. Now run:
+
+  npm install
+  npm run dev
+
+PS C:\react\react-hook-form-mui-zod>
+
+
