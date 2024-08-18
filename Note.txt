@@ -27,4 +27,9 @@ Done. Now run:
 
 PS C:\react\react-hook-form-mui-zod>
 
+--------------------------------------------------------------------------
 
+PS C:\react\react-hook-form-mui-zod> npm install @emotion/react @emotion/styled @mui/material @mui/icons-material @mui/x-date-pickers @mui/x-date-pickers-pro date-fns@3.2 react-hook-form zod @hookform/resolvers @tanstack/react-query axios lodash
+Note:
+    - In order to use zod with react-hook-form, we need to install @hookform/resolvers
+    - Need to install date-fns@3.2. Otherwise, it will note work with @mui/x-date-pickers @mui/x-date-pickers-pro
