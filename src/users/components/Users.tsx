@@ -4,10 +4,17 @@ export const Users = () => {
   const {
     register,
     formState: { errors },
+    handleSubmit,
   } = useForm<{ email: string }>({ mode: 'all' }); // also have a onBlur mode
 
+  const onSubmit = () => {
+    console.log('submit');
+  };
+
   return (
-    <>
+    // Using handleSubmit to wrap onSubmit will make sure on submit method will only be called when the form is value.
+    // e.g click into the input and just press enter will show you error message
+    <form onSubmit={handleSubmit(onSubmit)}>
       <input
         {...register('email', {
           required: { value: true, message: 'The email is required' },
@@ -16,6 +23,6 @@ export const Users = () => {
         placeholder='Email'
       />
       <p>{errors.email?.message}</p>
-    </>
+    </form>
   );
 };
