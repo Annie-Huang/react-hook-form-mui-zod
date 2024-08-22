@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { TextField } from '@mui/material';
+import { schema, Schema } from '../types/schema.ts';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 /*// Version of Users without using Zod:
 export const Users = () => {
@@ -30,7 +32,10 @@ export const Users = () => {
 };*/
 
 export const Users = () => {
-  const { register } = useForm({ mode: 'all' }); // also have a onBlur mode
+  const { register } = useForm<Schema>({
+    mode: 'all', // also have a onBlur mode
+    resolver: zodResolver(schema),
+  });
 
   return (
     <>
