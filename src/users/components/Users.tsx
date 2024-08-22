@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form';
+import { TextField } from '@mui/material';
 
+/*// Version of Users without using Zod:
 export const Users = () => {
   const {
     register,
@@ -24,5 +26,15 @@ export const Users = () => {
       />
       <p>{errors.email?.message}</p>
     </form>
+  );
+};*/
+
+export const Users = () => {
+  const { register } = useForm({ mode: 'all' }); // also have a onBlur mode
+
+  return (
+    <>
+      <TextField {...register('')} />
+    </>
   );
 };
