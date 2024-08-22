@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { TextField } from '@mui/material';
+import { Stack, TextField } from '@mui/material';
 import { schema, Schema } from '../types/schema.ts';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -32,14 +32,28 @@ export const Users = () => {
 };*/
 
 export const Users = () => {
-  const { register } = useForm<Schema>({
+  const {
+    register,
+    formState: { errors },
+  } = useForm<Schema>({
     mode: 'all', // also have a onBlur mode
     resolver: zodResolver(schema),
   });
 
   return (
-    <>
-      <TextField {...register('')} />
-    </>
+    <Stack sx={{ gap: 2 }}>
+      <TextField
+        {...register('name')}
+        label='Name'
+        error={!!errors.name}
+        helperText={errors.name?.message}
+      />
+      <TextField
+        {...register('email')}
+        label='Email'
+        error={!!errors.email}
+        helperText={errors.email?.message}
+      />
+    </Stack>
   );
 };
