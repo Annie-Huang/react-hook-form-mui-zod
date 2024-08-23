@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+import { useForm, useFormContext } from 'react-hook-form';
 import { Autocomplete, Stack, TextField } from '@mui/material';
 import { schema, Schema } from '../types/schema.ts';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -33,7 +33,7 @@ export const Users = () => {
 
 export const Users = () => {
   /*
-  // Shift this to the UserProvider level so we can use useFormContext with useForm betwee parent and children, rather than passing props one by one for each field.
+  // Shift this to the UserProvider level so we can use useForm with useFormContext between parent and children, rather than passing props one by one for each field.
   // https://www.react-hook-form.com/api/useformcontext/
   const {
     register,
@@ -43,6 +43,11 @@ export const Users = () => {
     resolver: zodResolver(schema),
   });
 */
+
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<Schema>();
 
   // console.log('register=', register('name')); // got name, onBlur, onChange, ref
   // console.log('register=', register('email'));
