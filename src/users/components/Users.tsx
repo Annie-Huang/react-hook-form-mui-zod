@@ -2,6 +2,7 @@ import { useForm, useFormContext } from 'react-hook-form';
 import { Autocomplete, Stack, TextField } from '@mui/material';
 import { schema, Schema } from '../types/schema.ts';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { RHFAutocomplete } from '../../components/RHFAutocomplete.tsx';
 
 /*// Version of Users without using Zod:
 export const Users = () => {
@@ -66,10 +67,12 @@ export const Users = () => {
         error={!!errors.email}
         helperText={errors.email?.message}
       />
-      <Autocomplete
-        options={[{ id: '1', label: 'Texas' }]}
-        renderInput={(params) => <TextField {...params} label='states' />}
-      />
+      {/*<Autocomplete*/}
+      {/*  options={[{ id: '1', label: 'Texas' }]}*/}
+      {/*  renderInput={(params) => <TextField {...params} label='states' />}*/}
+      {/*/>*/}
+
+      <RHFAutocomplete<Schema> name='state' />
     </Stack>
   );
 };

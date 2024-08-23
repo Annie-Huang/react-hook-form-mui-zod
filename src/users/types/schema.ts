@@ -15,6 +15,7 @@ export const schema = z.object({
       },
       { message: 'Email not valid' }
     ),
+  state: z.array(z.string()).min(1).max(2),
 });
 
 export type Schema = z.infer<typeof schema>;
