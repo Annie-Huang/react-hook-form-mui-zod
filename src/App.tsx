@@ -1,5 +1,5 @@
-import { Users } from './users/components/Users.tsx';
+import { UsersProvider } from './users/components/UsersProvider.tsx';
 
 export function App() {
-  return <Users />;
+  return <UsersProvider />;
 }

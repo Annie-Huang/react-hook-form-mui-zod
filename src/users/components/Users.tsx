@@ -32,6 +32,9 @@ export const Users = () => {
 };*/
 
 export const Users = () => {
+  /*
+  // Shift this to the UserProvider level so we can use useFormContext with useForm betwee parent and children, rather than passing props one by one for each field.
+  // https://www.react-hook-form.com/api/useformcontext/
   const {
     register,
     formState: { errors },
@@ -39,6 +42,7 @@ export const Users = () => {
     mode: 'all', // also have a onBlur mode
     resolver: zodResolver(schema),
   });
+*/
 
   // console.log('register=', register('name')); // got name, onBlur, onChange, ref
   // console.log('register=', register('email'));
