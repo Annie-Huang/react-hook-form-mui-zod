@@ -4,6 +4,7 @@ React Hook Form Course for Beginners (inc. Zod + Material UI)
 https://github.com/codegenixdev/react-hook-form-mui-zod-boilerplate
 https://github.com/Annie-Huang/react-hook-form-mui-zod
 
+https://mui.com/material-ui/react-autocomplete/
 --------------------------------------------------------------------------
 PS C:\react\react-hook-form-mui-zod> npm create vite .
 Need to install the following packages:

@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { Stack, TextField } from '@mui/material';
+import { Autocomplete, Stack, TextField } from '@mui/material';
 import { schema, Schema } from '../types/schema.ts';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -40,6 +40,9 @@ export const Users = () => {
     resolver: zodResolver(schema),
   });
 
+  // console.log('register=', register('name')); // got name, onBlur, onChange, ref
+  // console.log('register=', register('email'));
+
   return (
     <Stack sx={{ gap: 2 }}>
       <TextField
@@ -53,6 +56,10 @@ export const Users = () => {
         label='Email'
         error={!!errors.email}
         helperText={errors.email?.message}
+      />
+      <Autocomplete
+        options={[{ id: '1', label: 'Texas' }]}
+        renderInput={(params) => <TextField {...params} label='states' />}
       />
     </Stack>
   );
