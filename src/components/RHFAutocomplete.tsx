@@ -35,11 +35,13 @@ export function RHFAutocomplete<T extends FieldValues>({
           }
           // ['1', '2'] => ['California', 'Texas']
 
+          isOptionEqualToValue={(option, newValue) => option.id === newValue.id}
           onChange={(_, newValue) => {
             onChange(newValue.map((item) => item.id));
           }}
           // [{id: '1', label: 'California'}, ...] => ['1', '2']
 
+          disableCloseOnSelect
           multiple
         />
       )}
