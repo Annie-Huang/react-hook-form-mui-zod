@@ -1,12 +1,13 @@
 import { Controller, FieldValues, Path, useFormContext } from 'react-hook-form';
 import { Autocomplete, TextField } from '@mui/material';
 import { FC } from 'react';
-import { Option } from '../types/option.ts';
+import { Option } from '../types/option';
 
 // interface RHFAutocompleteProps<T extends FieldValues> {
 type RHFAutocompleteProps<T extends FieldValues> = {
   name: Path<T>;
   options?: Option[];
+  label: string;
 };
 
 // React Hook Form Autocomplete
@@ -15,6 +16,7 @@ type RHFAutocompleteProps<T extends FieldValues> = {
 export function RHFAutocomplete<T extends FieldValues>({
   name,
   options,
+  label,
 }: RHFAutocompleteProps<T>) {
   const { control } = useFormContext();
 
@@ -44,7 +46,14 @@ export function RHFAutocomplete<T extends FieldValues>({
           disableCloseOnSelect
           multiple
           renderInput={(params) => (
-            <TextField {...params} fullWidth inputRef={ref} error={error} />
+            <TextField
+              {...params}
+              fullWidth
+              inputRef={ref}
+              error={!!error}
+              helperText={error?.message}
+              label={label}
+            />
           )}
         />
       )}
