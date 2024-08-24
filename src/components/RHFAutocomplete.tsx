@@ -1,12 +1,12 @@
 import { Controller, FieldValues, Path, useFormContext } from 'react-hook-form';
-import { Autocomplete } from '@mui/material';
+import { Autocomplete, TextField } from '@mui/material';
 import { FC } from 'react';
 import { Option } from '../types/option.ts';
 
 // interface RHFAutocompleteProps<T extends FieldValues> {
 type RHFAutocompleteProps<T extends FieldValues> = {
   name: Path<T>;
-  options: Option[];
+  options?: Option[];
 };
 
 // React Hook Form Autocomplete
@@ -22,11 +22,11 @@ export function RHFAutocomplete<T extends FieldValues>({
     <Controller
       control={control}
       name={name}
-      render={({ field: { value, onChange, ref } }) => (
+      render={({ field: { value, onChange, ref }, fieldState: { error } }) => (
         <Autocomplete
-          options={options}
+          options={options || []}
           value={value.map((id: string) =>
-            options.find((item) => item.id === id)
+            options?.find((item) => item.id === id)
           )}
           // [{id: '1', label: 'California'}, {id: '2', label: 'Texas'}]
 
@@ -43,6 +43,9 @@ export function RHFAutocomplete<T extends FieldValues>({
 
           disableCloseOnSelect
           multiple
+          renderInput={(params) => (
+            <TextField {...params} fullWidth inputRef={ref} error={error} />
+          )}
         />
       )}
     />
