@@ -22,7 +22,20 @@ export function RHFAutocomplete<T extends FieldValues>({
     <Controller
       control={control}
       name={name}
-      render={(params) => <Autocomplete options={options} />}
+      render={({ field: { value, onChange, ref } }) => (
+        <Autocomplete
+          options={options}
+          value={value.map((id: string) =>
+            options.find((item) => item.id === id)
+          )}
+          // [{id: '1', label: 'California'}, {id: '2', label: 'Texas'}]
+
+          onChange={(_, newValue) => {
+            onChange(newValue.map((item) => item.id));
+          }}
+          // [{id: '1', label: 'California'}, ...] => ['1', '2']
+        />
+      )}
     />
   );
 }
