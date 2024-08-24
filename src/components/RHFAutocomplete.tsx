@@ -30,10 +30,17 @@ export function RHFAutocomplete<T extends FieldValues>({
           )}
           // [{id: '1', label: 'California'}, {id: '2', label: 'Texas'}]
 
+          getOptionLabel={(option) =>
+            options?.find((item) => item.id === option.id)?.label ?? ''
+          }
+          // ['1', '2'] => ['California', 'Texas']
+
           onChange={(_, newValue) => {
             onChange(newValue.map((item) => item.id));
           }}
           // [{id: '1', label: 'California'}, ...] => ['1', '2']
+
+          multiple
         />
       )}
     />
